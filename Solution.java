@@ -1,5 +1,4 @@
-package org.launchcode;
-
+import java.io.*;
 import java.util.*;
 
 // Marcus Swart
@@ -22,7 +21,6 @@ public class Solution {
         System.out.println(result);
     }
 
-
     public static Student[] Input() {
 
         Scanner in = new Scanner(System.in);
@@ -36,6 +34,7 @@ public class Solution {
             list[i] = new Student(i, in.nextInt());
         }
 
+        in.close();
         return list;
     }
 
@@ -67,7 +66,7 @@ public class Solution {
                 } else
                     countList[fail]--;
 
-                //The position where grading the current student will first succeed.
+                // The position where grading the current student will first succeed.
                 success = (student.position + 1) % students.length;
 
                 // Give that position +1.
